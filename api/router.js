@@ -1,10 +1,13 @@
 const express = require('express')
+const Recipes = require('./model')
+const { getRecipeById } = require('./model')
 
 const router = express.Router()
 
-router.get('/', async (req, res, next) => {
+router.get('/:recipe_id', async (req, res, next) => {
     try {
-        res.send('Ey mate youre doin great!')
+        const recipes = await Recipes.getRecipeById(req.params)
+        res.send(recipes)
     } catch (err) {
         next(err)
     }
