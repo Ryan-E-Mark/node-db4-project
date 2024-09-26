@@ -17,13 +17,13 @@ exports.seed = function(knex, Promise) {
     ])
   })
   .then(resp => {
-    return knex('recipe_ingredients').insert([
-      { recipe_id: 1, ingredient_id: 1, quantity: 2, step_id: 1},
-      { recipe_id: 1, ingredient_id: 2, quantity: .5, step_id: 2},
-      { recipe_id: 1, ingredient_id: 3, quantity: 1, step_id: 2},
-      { recipe_id: 1, ingredient_id: 1, quantity: 2, step_id: 3},
-      { recipe_id: 1, ingredient_id: 2, quantity: .5, step_id: 3},
-      { recipe_id: 1, ingredient_id: 3, quantity: 1, step_id: 3},
+    return knex('steps_ingredients').insert([
+      { ingredient_id: 1, quantity: 2, step_id: 1},
+      { ingredient_id: 2, quantity: .5, step_id: 2},
+      { ingredient_id: 3, quantity: 1, step_id: 2},
+      { ingredient_id: 1, quantity: 2, step_id: 3},
+      { ingredient_id: 2, quantity: .5, step_id: 3},
+      { ingredient_id: 3, quantity: 1, step_id: 3},
     ])
   })
 };
